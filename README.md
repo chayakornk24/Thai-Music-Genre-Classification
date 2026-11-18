@@ -13,7 +13,7 @@ audio features extracted from music preview clips.
 - `02_KNN/` — KNN notebook and cleaned feature data.
 - `03_Neural_Network/` — Neural Network notebook and cleaned feature data.
 - `04_Project_Report_and_Slides/` — project template and presentation slides.
-- `05_Saved_Experiment/` — saved Model 3 and test data for reproducing the saved experiment results.
+- `05_Saved_Experiment/` — saved Model 3 and test data for evaluating the saved experiment.
 - `requirements.txt` — Python packages required to run the notebooks.
 
 ## Environment
@@ -41,7 +41,7 @@ The TensorFlow version used is `2.22.0rc0`, a release candidate.
 ## Running the Notebooks
 
 Run each notebook with its own folder as the working directory so that
-the CSV file can be found.
+it can find the required files.
 
 ### 1. Data Cleaning
 
@@ -66,12 +66,31 @@ Open the notebook in `03_Neural_Network/`.
 This folder also includes a copy of `features_clean.csv`, so the notebook
 can be run without first running the data cleaning notebook.
 
+### 4. Saved Experiment
+
+Open `05_Saved_Experiment/View_Saved_Results.ipynb`.
+
+This notebook loads the saved Model 3 and test data to evaluate the saved
+experiment without retraining the model. It reports Top-1 and Top-2 accuracy.
+
 For each notebook, select **Restart Kernel**, then **Run All**.
+
+## Top-2 Accuracy
+
+Top-2 accuracy was not covered in the course. During error analysis, we
+observed that some songs may have characteristics of more than one genre,
+while each clip has only one label in the dataset.
+
+We used AI assistance to help write the code for calculating Top-2 accuracy.
+This metric checks whether the true label is among the model's two
+highest-scoring predictions.
 
 ## Notes
 
 - The data is split by artist using `random_state=42`.
-- The Neural Network is retrained when the notebook runs. Its results may
-  vary between runs because of randomness during training.
-- The Neural Network notebook saves Models 1, 2, and 3 in the `Saved/` folder.
-  Running the notebook again may overwrite existing files with the same names.
+- The Neural Network is retrained when the main Neural Network notebook
+  runs. Its results may vary between runs because of randomness during
+  training.
+- The Neural Network notebook saves Models 1, 2, and 3 in the `Saved/`
+  folder. Running it again may overwrite existing files with the same names.
+- The saved experiment can be evaluated without retraining.
