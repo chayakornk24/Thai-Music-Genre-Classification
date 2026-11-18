@@ -13,6 +13,7 @@ audio features extracted from music preview clips.
 - `02_KNN/` — KNN notebook and cleaned feature data.
 - `03_Neural_Network/` — Neural Network notebook and cleaned feature data.
 - `04_Project_Report_and_Slides/` — project template and presentation slides.
+- `05_Saved_Experiment/` — saved Model 3 and test data for reproducing the saved experiment results.
 - `requirements.txt` — Python packages required to run the notebooks.
 
 ## Environment
