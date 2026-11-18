@@ -85,6 +85,18 @@ We used AI assistance to help write the code for calculating Top-2 accuracy.
 This metric checks whether the true label is among the model's two
 highest-scoring predictions.
 
+## Educational Use and Data Source
+
+This project was developed for educational purposes as part of the
+Principles of Deep Learning course. It is not intended for commercial use.
+
+Music metadata and preview information were obtained through the
+iTunes Search API. Song titles, artist names, artwork, and other
+third-party content remain the property of their respective rights holders.
+
+This repository contains extracted audio features and project code.
+It does not distribute the original music recordings or preview audio.
+
 ## Notes
 
 - The data is split by artist using `random_state=42`.
