@@ -9,11 +9,11 @@ audio features extracted from music preview clips.
 
 ## Repository Contents
 
-- `Project Template.ipynb` — project overview, methodology, results, and discussion.
-- `01_Data_Cleaning/` — data cleaning notebook and original feature data.
+- `01_Data_Cleaning/` — data cleaning notebook and original extracted feature data.
 - `02_KNN/` — KNN notebook and cleaned feature data.
 - `03_Neural_Network/` — Neural Network notebook and cleaned feature data.
-- `Slides/` — presentation slides.
+- `04_Project_Report_and_Slides/` — project template and presentation slides.
+- `requirements.txt` — Python packages required to run the notebooks.
 
 ## Environment
 
@@ -42,12 +42,28 @@ The TensorFlow version used is `2.22.0rc0`, a release candidate.
 Run each notebook with its own folder as the working directory so that
 the CSV file can be found.
 
-1. **Data Cleaning:** Open `01_Data_Cleaning/Data_Cleaning.ipynb`.
-   It reads `features.csv` and creates `features_clean.csv`.
-2. **KNN:** Open the notebook in `02_KNN/`. It reads the
-   `features_clean.csv` provided in that folder.
-3. **Neural Network:** Open the notebook in `03_Neural_Network/`.
-   It reads the `features_clean.csv` provided in that folder.
+### 1. Data Cleaning
+
+Open `01_Data_Cleaning/Data_Cleaning.ipynb`.
+
+- `features.csv` contains the original audio features before cleaning.
+- The notebook removes duplicate entries and short clips.
+- After running, it saves the cleaned dataset as `features_clean.csv`
+  in its working directory.
+
+### 2. KNN
+
+Open the notebook in `02_KNN/`.
+
+This folder includes a copy of `features_clean.csv`, so the notebook can
+be run without first running the data cleaning notebook.
+
+### 3. Neural Network
+
+Open the notebook in `03_Neural_Network/`.
+
+This folder also includes a copy of `features_clean.csv`, so the notebook
+can be run without first running the data cleaning notebook.
 
 For each notebook, select **Restart Kernel**, then **Run All**.
 
@@ -56,5 +72,5 @@ For each notebook, select **Restart Kernel**, then **Run All**.
 - The data is split by artist using `random_state=42`.
 - The Neural Network is retrained when the notebook runs. Its results may
   vary between runs because of randomness during training.
-- The Neural Network notebook saves Model 3 to `Saved/model_3.h5`.
-  Running it again may overwrite an existing file with the same name.
+- The Neural Network notebook saves Models 1, 2, and 3 in the `Saved/` folder.
+  Running the notebook again may overwrite existing files with the same names.
